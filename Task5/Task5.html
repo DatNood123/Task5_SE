@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://cdn.jsdelivr.net/gh/startinhit/font-awesome/css/all.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Web bán lẻ</title>
+    <style>
+        .mySlides {display:none;}
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 17px;
+            border-radius: 5px;
+            width:500px; 
+            border: 2px solid;
+        }
+        
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 16px;
+            background: #EA8F1C;
+            font-size: 17px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid;
+        }
+
+        .navbar-nav .nav-item:hover {
+            background-color: black;
+        }
+        
+        .navbar-nav .nav-item {
+            background: #EA8F1C;
+            border-radius: 5px;
+            margin-left: 2px;
+            margin-right: 2px;
+            color: black;
+            border: 2px solid;
+        }
+        .slide {
+            border: 2px solid;
+            background-color: black;
+            
+        }
+
+        .cell {
+            margin-top: 15px;
+            margin-right: 5px;
+            text-align: center;
+            border-radius: 10px;
+            padding-bottom: 10px;
+            box-shadow: 4px 8px 15px 2px rgba(0,0,0,0.2);
+            background-color: #EA8F1C;
+        }
+        .cell:hover {
+            box-shadow: 4px 12px 14px 4px rgba(248, 16, 16, 0.6);
+        }
+        .cell .user-info .title {
+            margin-top: 8px;
+            font-weight: bold;
+            display: block;
+        }
+        .cell .user-info .position {
+            font-size: 13px;
+        }
+        .cell img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .product-content{
+            background-color: black;
+            padding: 1px 12px 12px;
+        }
+
+        .title-product h2{
+            font-weight: bold;
+            color: white;
+        }
+
+        .container{
+            background-color: black;
+        }
+
+        .but:hover{
+            background-color: rgb(25, 114, 239);
+        }
+
+        .but{
+            background-color: black;
+            color: white;
+            margin-top: 15px;
+            border: 2px solid;
+            border-radius: 15px;
+            width: 100px;
+            height: 50px;
+        }
+
+        .notification{
+            font-style: italic;
+            height:70px;
+            position: fixed;
+            left:1350px;
+            top: 650px;
+            color: black;
+            background-color: #EA8F1C;
+            border: 3px solid;
+            border-radius: 15px;
+            text-align: center;
+
+        }
+        
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark w3-container w3-black">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">N24 - Điểm 10 chất lượng</a>
+        
+        <!-- Links -->
+        <div class="topnav">
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Chăm sóc khách hàng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Thông báo</a>
+            </li>
+      
+            <li class="nav-item">
+                <a class="nav-link" href="#">Thông tin đơn hàng</a>
+            </li>
+            <!-- Dropdown -->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Danh mục sản phẩm
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Đồ dùng gia dụng</a>
+                    <a class="dropdown-item" href="#">Đồ dùng điện tử</a>
+                    <a class="dropdown-item" href="#">Vũ khí</a>
+                    <a class="dropdown-item" href="#">Thú cưng</a>
+                    <a class="dropdown-item" href="#">Waifu</a>
+                </div>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="slide">
+        <div>
+            <div class="w3-content w3-display-container">
+            <img class="mySlides" src="anh7.png" style="width:100%">
+            <img class="mySlides" src="anh6.PNG" style="width:100%">
+            <img class="mySlides" src="anh5.PNG" style="width:100%">
+            <img class="mySlides" src="anh8.PNG" style="width:100%">
+            <img class="mySlides" src="anh9.PNG" style="width:100%">
+        </div>
+        </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+    
+            function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 2500); // Change image every 2 seconds
+            }
+        </script>
+    </div>
+
+    <div class="container">
+
+        <!----đồ gia dụng---->
+        <div class="product-content">
+            <div class="title-product">
+                <h2>Sản phẩm gia dụng</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="chao.jpg">
+                        <div class="user-info">
+                            <span class="title">Chảo chống dính cực mạnh</span>
+                            <p>Ưu đãi 50%</p>
+                            <li>Giá gốc:<del> 2.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 1.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="noicom (2).png">
+                        <div class="user-info">
+                            <span class="title">Nồi cơm điện siêu cấp</span>
+                            <p>Ưu đãi 10%</p>
+                            <li>Giá gốc:<del> 20.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 18.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="bepga.jpg">
+                        <div class="user-info">
+                            <span class="title">Bếp gas cực cháy</span>
+                            <p>Ưu đãi 30%</p>
+                            <li>Giá gốc:<del> 5.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 3.500.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="dao.jpg">
+                        <div class="user-info">
+                            <span class="title">Bộ dao 7749 món</span>
+                            <p>Ưu đãi 20%</p>
+                            <li>Giá gốc:<del> 2.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 1.600.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----đồ điện tử---->
+        <div class="product-content">
+            <div class="title-product">
+                <h2>Sản phẩm điện tử</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="iphone-13.jpg">
+                        <div class="user-info">
+                            <span class="title">Iphone 13 pro max</span>
+                            <p>Ưu đãi 5%</p>
+                            <li>Giá gốc:<del> 35.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 33.250.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="s22.jpg">
+                        <div class="user-info">
+                            <span class="title">Samsung S22 Ultra</span>
+                            <p>Ưu đãi 5%</p>
+                            <li>Giá gốc:<del> 35.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 33.250.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="ps5.jfif">
+                        <div class="user-info">
+                            <span class="title">Play Station 5</span>
+                            <p>Ưu đãi 500.000<sup>đ</sup></p>
+                            <li>Giá gốc:<del> 18.500.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 18.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="laptop.jpg">
+                        <div class="user-info">
+                            <span class="title">Acer Helios 500</span>
+                            <p>Ưu đãi 10%</p>
+                            <li>Giá gốc:<del> 120.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 108.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!----vũ khí---->
+        <div class="product-content">
+            <div class="title-product">
+                <h2>Vũ khí</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="saber.png">
+                        <div class="user-info">
+                            <span class="title">Saber Light</span>
+                            <p>Ưu đãi 10%</p>
+                            <li>Giá gốc:<del> 250.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 225.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="fist.jfif">
+                        <div class="user-info">
+                            <span class="title">Găng tay Thanos</span>
+                            <p>Ưu đãi 50%</p>
+                            <li>Giá gốc:<del> 30.000.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 15.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="gun.jpg">
+                        <div class="user-info">
+                            <span class="title">Kitchen Gun</span>
+                            <p>Ưu đãi 50%</p>
+                            <li>Giá gốc:<del> 20.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 10.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="kim.jfif">
+                        <div class="user-info">
+                            <span class="title">Tên lửa hạt nhân</span>
+                            <p>Ưu đãi 1%</p>
+                            <li>Giá gốc:<del> 150.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 135.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-content">
+            <div class="title-product">
+                <h2>Thú cưng</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="ca.jfif">
+                        <div class="user-info">
+                            <span class="title">Megalodon nhút nhát</span>
+                            <p>Ưu đãi 50%</p>
+                            <li>Giá gốc:<del> 3.000.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 1.500.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="khunglong.jpg">
+                        <div class="user-info">
+                            <span class="title">T-Rex hiền lành</span>
+                            <p>Ưu đãi 10%</p>
+                            <li>Giá gốc:<del> 120.000.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 108.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="gau.jpg">
+                        <div class="user-info">
+                            <span class="title">Gấu Nga dễ thương</span>
+                            <p>Ưu đãi 500.000<sup>đ</sup></p>
+                            <li>Giá gốc:<del> 15.000.000.000<del><sup>đ</sup></li>
+                            <li>Giá bán: 15.499.500.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="meo.jpg">
+                        <div class="user-info">
+                            <span class="title">Mèo vô dụng</span>
+                            <p>Tặng miễn phí</p>
+                            <li>Giá gốc:<del> 20.000.000</del><sup>đ</sup></li>
+                            <li>Giá bán: 0<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-content">
+            <div class="title-product">
+                <h2>Waifu</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="komi.jpg">
+                        <div class="user-info">
+                            <span class="title">Komi</span>
+                            <li>Giá bán: 20.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="rem.jpg">
+                        <div class="user-info">
+                            <span class="title">Rem</span>
+                            <li>Giá bán: 20.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="boa.jpg">
+                        <div class="user-info">
+                            <span class="title">Boa Hancock</span>
+                            <li>Giá bán: 20.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="cell">
+                        <img src="yor.jpg">
+                        <div class="user-info">
+                            <span class="title">Yor</span>
+                            <li>Giá bán: 20.000.000.000<sup>đ</sup></li>
+                            <button class="but" type="submit">Mua ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="notification">@Liên hệ 113 hoặc 911 để thông báo nếu gặp sự cố</p>
+    
+
+</body>
+</html>
